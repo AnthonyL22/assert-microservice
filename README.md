@@ -20,61 +20,56 @@ capabilities of the String object.  Many of the methods in this API use Java's v
 
 ```
 <dependency>
-    <groupId>com.qualcomm.qssert</groupId>
-    <artifactId>qssert-service</artifactId>
-    <version>1.0.3</version>
+    <groupId>com.pqc.assert</groupId>
+    <artifactId>assert-microservice</artifactId>
+    <version>1.0.0</version>
 </dependency>
 ```
 
-## Jenkins Job
-
-The [Jenkins job](http://toautoweb2.na.qualcomm.com:8080/view/Services/job/qssert-service/) is setup and configured to use the JaCoCo Code Coverage library.
-
-
 ## Integration
-By default the **QssertService() service** has the SOFT assertion capability enabled.  This means that when an assertion 
+By default the **AssertService() service** has the SOFT assertion capability enabled.  This means that when an assertion 
 failure occurs the failure is stored in a Map of failures and will allow the test being executed to continue 
 running until completion.  
 
-However, you may switch QssertService to fail on the first assertion failure by instantiating the QssertService() 
+However, you may switch AssertService to fail on the first assertion failure by instantiating the AssertService() 
 object with a default boolean value of true or call setEnableHardAssertions().  Follow the examples below:
 
 ###Spring Bean Assertion Example
-You are able to inject this service into your Java class if you use Spring.  The QssertService is annotated 
+You are able to inject this service into your Java class if you use Spring.  The AssertService is annotated 
 with the @Component annotation so you can simply do the following in your project:
 
 * Add the following to your Spring context file:
 ```
-<context:component-scan base-package="com.qualcomm.qssert"/>
+<context:component-scan base-package="com.pwc.assert"/>
 ```
 
 * Add the following to your class as a field:
 ```
 @Autowired
-protected QssertService qssertService;
+protected AssertService assertService;
 ```
 
 * Instantiate bean accordingly:
 ``` 
-qssertService = (QssertService) ctx.getBean("qssertService");
+assertService = (AssertService) ctx.getBean("assertService");
 
 // Optional to enable Hard Assertions
-qssertService.setEnableHardAssertions(true);
+assertService.setEnableHardAssertions(true);
 ```
 
 ###Soft Assertion Example
 ```
-QssertService softAssert = new QssertService();
+AssertService softAssert = new AssertService();
 ```
 ###Hard Assertion via Constructor Example
 ```
-QssertService hardAssert = new QssertService(true);
+AssertService hardAssert = new AssertService(true);
 ```
 
 ###Hard Assertion after Instantiation Example
 ```
-QssertService qssertService = new QssertService();
-qssertService.setEnableHardAssertions(true);
+AssertService assertService = new AssertService();
+assertService.setEnableHardAssertions(true);
 ```
 
 ## API Reference

@@ -3,16 +3,20 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.qualcomm.qssert</groupId>
-    <artifactId>qssert-service</artifactId>
-    <name>Qualcomm Assertion Service</name>
-    <version>1.0.5-SNAPSHOT</version>
+    <groupId>com.pwc.assert</groupId>
+    <artifactId>assert-microservice</artifactId>
+    <name>Assertion Microservice</name>
+    <version>1.0.0-SNAPSHOT</version>
     <packaging>jar</packaging>
 
     <properties>
+
         <java_code.version>1.7</java_code.version>
 
-        <qherkin-logging-service.version>1.0.4</qherkin-logging-service.version>
+        <!-- MS Dependency Versions -->
+        <logging-microservice.version>1.0.0-SNAPSHOT</logging-microservice.version>
+
+        <!-- Dependency Versions -->
         <junit.version>4.11</junit.version>
         <testng.version>6.8.7</testng.version>
         <mockito.version>1.10.19</mockito.version>
@@ -21,9 +25,10 @@
         <commons.lang.version>2.6</commons.lang.version>
         <surefire.junit.version>2.18.1</surefire.junit.version>
         <spring.version>3.2.3.RELEASE</spring.version>
-
         <restassured.version>2.4.1</restassured.version>
         <jacoco.version>0.7.5.201505241946</jacoco.version>
+
+        <!-- Plugin Versions -->
         <maven-compiler-plugin.version>3.1</maven-compiler-plugin.version>
         <maven-surefire-plugin.version>2.14</maven-surefire-plugin.version>
         <maven-scm-plugin.version>1.9.4</maven-scm-plugin.version>
@@ -31,12 +36,13 @@
         <maven-clean-plugin.version>2.4.1</maven-clean-plugin.version>
         <maven-release-plugin.version>2.4.1</maven-release-plugin.version>
         <maven-scm-provider-gitxexe.version>1.9</maven-scm-provider-gitxexe.version>
+
     </properties>
 
     <scm>
-        <connection>scm:git:https://github.qualcomm.com/c-anlomb/qssert-service</connection>
-        <developerConnection>scm:git:https://github.qualcomm.com/c-anlomb/qssert-service</developerConnection>
-        <url>scm:git:https://github.qualcomm.com/c-anlomb/qssert-service</url>
+        <connection>scm:git:https://github.com/AnthonyL22/assert-microservice</connection>
+        <developerConnection>scm:git:https://github.com/AnthonyL22/assert-microservice</developerConnection>
+        <url>scm:git:https://github.com/AnthonyL22/assert-microservice</url>
         <tag>HEAD</tag>
     </scm>
 
@@ -58,14 +64,12 @@
 
     <dependencies>
 
-        <!--Qualcomm Dependencies-->
         <dependency>
-            <groupId>com.qualcomm.qherkin</groupId>
-            <artifactId>qherkin-logging-service</artifactId>
-            <version>${qherkin-logging-service.version}</version>
+            <groupId>com.pwc.logging</groupId>
+            <artifactId>logging-microservice</artifactId>
+            <version>${logging-microservice.version}</version>
         </dependency>
 
-        <!--Core Dependencies-->
         <dependency>
             <groupId>com.jayway.restassured</groupId>
             <artifactId>json-path</artifactId>
@@ -103,7 +107,6 @@
             <version>${hamcrest.version}</version>
         </dependency>
 
-        <!-- Unit Test Dependencies -->
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
@@ -213,32 +216,32 @@
         </pluginManagement>
     </build>
 
-    <repositories>
+    <!--     <repositories>
 
-        <repository>
-            <id>legalIT-nexus</id>
-            <name>Legal IT Repo</name>
-            <url>http://maven/content/groups/legalit</url>
-        </repository>
+            <repository>
+                <id>legalIT-nexus</id>
+                <name>Legal IT Repo</name>
+                <url>http://maven/content/groups/legalit</url>
+            </repository>
 
-    </repositories>
+        </repositories>
 
-    <distributionManagement>
+        <distributionManagement>
 
-        <repository>
-            <id>legalIT-nexus</id>
-            <name>Legal IT Releases</name>
-            <url>http://maven.qualcomm.com/content/repositories/legal_it_releases</url>
-            <uniqueVersion>true</uniqueVersion>
-        </repository>
+            <repository>
+                <id>legalIT-nexus</id>
+                <name>Legal IT Releases</name>
+                <url>http://maven.qualcomm.com/content/repositories/legal_it_releases</url>
+                <uniqueVersion>true</uniqueVersion>
+            </repository>
 
-        <snapshotRepository>
-            <id>legalIT-nexus</id>
-            <name>Legal IT Snapshots</name>
-            <url>http://maven.qualcomm.com/content/repositories/legal_it_snapshot</url>
-            <uniqueVersion>false</uniqueVersion>
-        </snapshotRepository>
+            <snapshotRepository>
+                <id>legalIT-nexus</id>
+                <name>Legal IT Snapshots</name>
+                <url>http://maven.qualcomm.com/content/repositories/legal_it_snapshot</url>
+                <uniqueVersion>false</uniqueVersion>
+            </snapshotRepository>
 
-    </distributionManagement>
+        </distributionManagement> -->
 
 </project>
