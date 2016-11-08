@@ -5,8 +5,8 @@
 
     <groupId>com.qualcomm.qssert</groupId>
     <artifactId>qssert-service</artifactId>
-    <name>Qualcomm Assertion Service</name>
-    <version>1.0.5-SNAPSHOT</version>
+    <name>Assertion Microservice</name>
+    <version>1.0.0-SNAPSHOT</version>
     <packaging>jar</packaging>
 
     <properties>
@@ -34,9 +34,9 @@
     </properties>
 
     <scm>
-        <connection>scm:git:https://github.qualcomm.com/c-anlomb/qssert-service</connection>
-        <developerConnection>scm:git:https://github.qualcomm.com/c-anlomb/qssert-service</developerConnection>
-        <url>scm:git:https://github.qualcomm.com/c-anlomb/qssert-service</url>
+        <connection>scm:git:https://github.com/AnthonyL22/assert-microservice</connection>
+        <developerConnection>scm:git:https://github.com/AnthonyL22/assert-microservice</developerConnection>
+        <url>scm:git:https://github.com/AnthonyL22/assert-microservice</url>
         <tag>HEAD</tag>
     </scm>
 
@@ -213,7 +213,7 @@
         </pluginManagement>
     </build>
 
-    <repositories>
+<!--     <repositories>
 
         <repository>
             <id>legalIT-nexus</id>
@@ -239,6 +239,6 @@
             <uniqueVersion>false</uniqueVersion>
         </snapshotRepository>
 
-    </distributionManagement>
+    </distributionManagement> -->
 
 </project>
