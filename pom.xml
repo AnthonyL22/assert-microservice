@@ -3,7 +3,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.github.anthonyl22.assertion</groupId>
+    <groupId>com.pacificwebconsulting.assertion</groupId>
     <artifactId>assertion-microservice</artifactId>
     <version>1.0.0-SNAPSHOT</version>
     <name>Assertion Microservice</name>
@@ -70,7 +70,7 @@
     <dependencies>
 
         <dependency>
-            <groupId>com.github.anthonyl22.logging</groupId>
+            <groupId>com.pacificwebconsulting.logging</groupId>
             <artifactId>logging-microservice</artifactId>
             <version>${logging-microservice.version}</version>
         </dependency>
