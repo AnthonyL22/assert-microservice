@@ -219,10 +219,20 @@
     <repositories>
 
         <repository>
-            <id>snapshot-repo</id>
+            <id>anthonyl22-snapshots</id>
             <url>https://github.com/AnthonyL22/mvn-repo/raw/master/snapshots</url>
         </repository>
 
     </repositories>
+
+    <distributionManagement>
+
+        <snapshotRepository>
+            <id>snapshot-repo</id>
+            <url>https://github.com/AnthonyL22/mvn-repo/raw/master/snapshots</url>
+            <uniqueVersion>false</uniqueVersion>
+        </snapshotRepository>
+
+    </distributionManagement>
 
 </project>
