@@ -216,32 +216,13 @@
         </pluginManagement>
     </build>
 
-    <!--     <repositories>
+    <repositories>
 
-            <repository>
-                <id>legalIT-nexus</id>
-                <name>Legal IT Repo</name>
-                <url>http://maven/content/groups/legalit</url>
-            </repository>
+        <repository>
+            <id>snapshot-repo</id>
+            <url>https://github.com/AnthonyL22/mvn-repo/raw/master/snapshots</url>
+        </repository>
 
-        </repositories>
-
-        <distributionManagement>
-
-            <repository>
-                <id>legalIT-nexus</id>
-                <name>Legal IT Releases</name>
-                <url>http://maven.qualcomm.com/content/repositories/legal_it_releases</url>
-                <uniqueVersion>true</uniqueVersion>
-            </repository>
-
-            <snapshotRepository>
-                <id>legalIT-nexus</id>
-                <name>Legal IT Snapshots</name>
-                <url>http://maven.qualcomm.com/content/repositories/legal_it_snapshot</url>
-                <uniqueVersion>false</uniqueVersion>
-            </snapshotRepository>
-
-        </distributionManagement> -->
+    </repositories>
 
 </project>
