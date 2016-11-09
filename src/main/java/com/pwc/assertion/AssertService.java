@@ -31,10 +31,22 @@ public class AssertService {
     public AssertService() {
     }
 
+    /**
+     * Constructor to enable or disable assertions globally
+     *
+     * @param enableHardAssertions enable/disable setting
+     */
     public AssertService(final boolean enableHardAssertions) {
         AssertService.enableHardAssertions = enableHardAssertions;
     }
 
+    /**
+     * Base method for all assertions
+     *
+     * @param message       message description
+     * @param actual        actual value to assert upon
+     * @param actualMatcher Matcher to use for the assertion
+     */
     public static void assertThat(String message, Object actual, Matcher actualMatcher) {
         StringDescription stringDescription = new StringDescription();
         stringDescription.appendText(message + " ");

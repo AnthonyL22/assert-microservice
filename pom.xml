@@ -5,8 +5,10 @@
 
     <groupId>com.pwc.assertion</groupId>
     <artifactId>assertion-microservice</artifactId>
-    <name>Assertion Microservice</name>
     <version>1.0.0-SNAPSHOT</version>
+    <name>Assertion Microservice</name>
+    <description>Hamcrest-based assertion microservice</description>
+    <url>https://github.com/AnthonyL22/assert-microservice</url>
     <packaging>jar</packaging>
 
     <properties>
