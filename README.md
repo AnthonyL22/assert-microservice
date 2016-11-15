@@ -20,8 +20,8 @@ capabilities of the String object.  Many of the methods in this API use Java's v
 
 ```
 <dependency>
-    <groupId>com.pqc.assert</groupId>
-    <artifactId>assert-microservice</artifactId>
+    <groupId>com.pacificwebconsulting.assertion</groupId>
+    <artifactId>assertion-microservice</artifactId>
     <version>1.0.0</version>
 </dependency>
 ```
