@@ -9,7 +9,7 @@ import org.testng.collections.Maps;
 
 import java.util.Map;
 
-import static com.pwc.logging.LoggerService.LOG;
+import static com.pwc.logging.service.LoggerService.LOG;
 
 public class AssertController extends Assertion {
 

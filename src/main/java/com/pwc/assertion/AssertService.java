@@ -2,7 +2,7 @@ package com.pwc.assertion;
 
 import com.jayway.restassured.path.json.JsonPath;
 import com.pwc.assertion.matcher.CustomMatchers;
-import com.pwc.logging.LoggerHelper;
+import com.pwc.logging.helper.LoggerHelper;
 import org.apache.commons.lang.StringUtils;
 import org.hamcrest.CoreMatchers;
 import org.hamcrest.Matcher;
@@ -13,7 +13,7 @@ import org.testng.Assert;
 import java.util.Arrays;
 import java.util.Collection;
 
-import static com.pwc.logging.LoggerService.LOG;
+import static com.pwc.logging.service.LoggerService.LOG;
 import static org.hamcrest.CoreMatchers.both;
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.not;

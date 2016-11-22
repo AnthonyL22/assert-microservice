@@ -1,7 +1,7 @@
 package com.pwc.assertion.matcher;
 
 import com.jayway.restassured.path.json.JsonPath;
-import com.pwc.logging.LoggerHelper;
+import com.pwc.logging.helper.LoggerHelper;
 import org.apache.commons.lang.StringUtils;
 import org.hamcrest.BaseMatcher;
 import org.hamcrest.Description;
