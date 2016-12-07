@@ -12,10 +12,10 @@
 
     <properties>
 
-        <java_code.version>1.7</java_code.version>
+        <java_code.version>1.8</java_code.version>
 
         <!-- MS Dependency Versions -->
-        <logging-microservice.version>1.0.3</logging-microservice.version>
+        <logging-microservice.version>1.0.4</logging-microservice.version>
 
         <!-- Dependency Versions -->
         <junit.version>4.11</junit.version>

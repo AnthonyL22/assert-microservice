@@ -13,7 +13,7 @@ capabilities of the String object.  Many of the methods in this API use Java's v
 
 ## Prerequisites
 
-1. Java 1.7
+1. Java 1.8
 2. Maven 3.x
 
 ## Maven Dependency
