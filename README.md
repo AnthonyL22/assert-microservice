@@ -1,3 +1,9 @@
+# Current Status
+
+[![Build Status][travis-shield]][https://travis-ci.org/AnthonyL22/assertion-microservice.svg?branch=master]
+
+[![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.pacificwebconsulting.assertion/assertion-microservice/badge.svg?style=plastic)](https://maven-badges.herokuapp.com/maven-central/com.pacificwebconsulting.assertion/assertion-microservice)
+
 ## Introduction
 
 Welcome to a 100% Hamcrest and TestNG-based automated testing Assertion service.  This service should be used by projects 
