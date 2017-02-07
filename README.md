@@ -1,7 +1,3 @@
-# Current Status
-
-[![Build Status][travis-shield]][https://travis-ci.org/AnthonyL22/assertion-microservice.svg?branch=master]
-
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.pacificwebconsulting.assertion/assertion-microservice/badge.svg?style=plastic)](https://maven-badges.herokuapp.com/maven-central/com.pacificwebconsulting.assertion/assertion-microservice)
 
 ## Introduction
