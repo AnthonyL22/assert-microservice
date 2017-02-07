@@ -3,5 +3,5 @@ sudo: false
 script: mvn clean verify
 notifications:
   email: false
-script:
-  - jdk_switcher use oraclejdk8
+jdk:
+  - oraclejdk8
