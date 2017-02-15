@@ -8,6 +8,11 @@ Welcome to a 100% Hamcrest and TestNG-based automated testing Assertion service.
 that would like to leverage Hamcrest's sugar as well as TestNG's Assertion model in both a soft or hard assertion paradigm.  This service override the 
 default TestNG Assert life cycle and controls the flow and execution of assertions in your test.
 
+# Questions and issues
+
+The [github issue tracker](https://github.com/AnthonyL22/assertion-microservice/issues) is **_only_** for bug reports and 
+feature requests. Anything else, such as questions for help in using the library, should be [emailed to our team](http://www.pacificwebconsulting.com/contact/).  
+
 # Technology
 All assertions follow [Hamcrest's](https://code.google.com/p/hamcrest/) Fluent API assertThat() structure.  See the API reference section for full
 functionality with examples.
