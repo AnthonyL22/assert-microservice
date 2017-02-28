@@ -112,7 +112,7 @@ assertThat(String message, Object actual, Matcher actualMatcher);
 * assertFail();
 
 # Advanced Usage
-The **Qssert Service** also enables users to extend its capabilities by bundling Hamcrest's [custom matcher](https://code.google.com/p/hamcrest/wiki/Tutorial) 
+This service also enables users to extend its capabilities by bundling Hamcrest's [custom matcher](https://code.google.com/p/hamcrest/wiki/Tutorial) 
 functionality. You'll probably find that you need to create your own Matcher from time to time to fit your testing needs. This commonly occurs when 
 you find a fragment of code that tests the same set of properties over and over again (and in different tests), and you'd like 
 to bundle the fragment into a single custom assertion. By writing your own matcher you'll eliminate code duplication and make your 
