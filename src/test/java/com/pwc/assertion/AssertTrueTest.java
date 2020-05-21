@@ -13,7 +13,6 @@ public class AssertTrueTest extends AssertBaseTest {
         AssertService.assertTrue("my AssertService.assertion %s %s %s %s %s %s %s", true, "is going to pass", 1, 2, 3);
     }
 
-
     @Test
     public void passAssertTrueExtendedLoggingTest() {
         AssertService.assertTrue("my AssertService.assertion %s %s", true, "is going to pass");

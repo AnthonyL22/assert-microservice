@@ -16,7 +16,8 @@ import java.util.regex.Pattern;
 public class CustomMatchers {
 
     /**
-     * Assert if an object is contained within a Collection
+     * Assert if an object is contained within a Collection.
+     *
      * Note: toString() is called on each item in the collection to perform the RegEx
      */
     public static class CollectionContainsMatcher extends BaseMatcher {
@@ -61,7 +62,7 @@ public class CustomMatchers {
     }
 
     /**
-     * Regex based matcher to find matching regex condition
+     * Regex based matcher to find matching regex condition.
      */
     public static class RegexMatcher extends BaseMatcher {
         private final String regex;
@@ -82,7 +83,7 @@ public class CustomMatchers {
     }
 
     /**
-     * Asserts if a given String contains sub-strings in no particular order
+     * Asserts if a given String contains sub-strings in no particular order.
      */
     public static class StringContainsNotInOrderMatcher extends TypeSafeMatcher<String> {
         private final Iterable<String> substrings;
@@ -93,14 +94,14 @@ public class CustomMatchers {
 
         public boolean matchesSafely(String s) {
             int fromIndex;
-            Iterator i$ = this.substrings.iterator();
+            Iterator stringIterator = this.substrings.iterator();
 
             do {
-                if (!i$.hasNext()) {
+                if (!stringIterator.hasNext()) {
                     return true;
                 }
                 fromIndex = 0;
-                String substring = (String) i$.next();
+                String substring = (String) stringIterator.next();
                 fromIndex = s.indexOf(substring, fromIndex);
             } while (fromIndex > -1);
 
@@ -120,7 +121,7 @@ public class CustomMatchers {
     }
 
     /**
-     * JSON matcher to find matching conditions
+     * JSON matcher to find matching conditions.
      */
     public static class JsonMatcher extends BaseMatcher {
 

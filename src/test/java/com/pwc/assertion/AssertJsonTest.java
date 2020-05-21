@@ -8,37 +8,13 @@ import org.mockito.runners.MockitoJUnitRunner;
 @RunWith(MockitoJUnitRunner.class)
 public class AssertJsonTest extends AssertBaseTest {
 
-    public static final String TEST_JSON =
-            "{\"uuid\": 777," +
-                    "        \"firstName\": \"Bar\"," +
-                    "        \"middleName\": \"K\"," +
-                    "        \"superhero\": true," +
-                    "        \"sleepy\": false," +
-                    "        \"lastName\": \"Foo\"," +
-                    "        \"emailAddress\": \"foobar@emailme.com\"," +
-                    "        \"hireDate\": \"2007-07-02\"," +
-                    "        \"officeCountry\": {" +
-                    "          \"name\": \"US\"," +
-                    "          \"description\": \"United States\"," +
-                    "          \"displayValue\": \"United States\"," +
-                    "          \"usa\": true," +
-                    "          \"pct\": false," +
-                    "          \"foreign\": false," +
-                    "          \"ep\": false," +
-                    "          \"vietnam\": false," +
-                    "          \"jikp\": false," +
-                    "          \"identifyingValue\": \"814\"" +
-                    "        }," +
-                    "        \"officeCity\": \"San Diego\"," +
-                    "        \"_links\": {" +
-                    "          \"self\": {" +
-                    "            \"href\": \"http://foobar.com/api/me-webservice/employees/123\"" +
-                    "          }," +
-                    "          \"employee\": {" +
-                    "            \"href\": \"http://foobar.com/api/you-webservice/employees/321\"" +
-                    "          }" +
-                    "        }" +
-                    "      }";
+    public static final String TEST_JSON = "{\"uuid\": 777," + "        \"firstName\": \"Bar\"," + "        \"middleName\": \"K\"," + "        \"superhero\": true," + "        \"sleepy\": false,"
+                    + "        \"lastName\": \"Foo\"," + "        \"emailAddress\": \"foobar@emailme.com\"," + "        \"hireDate\": \"2007-07-02\"," + "        \"officeCountry\": {"
+                    + "          \"name\": \"US\"," + "          \"description\": \"United States\"," + "          \"displayValue\": \"United States\"," + "          \"usa\": true,"
+                    + "          \"pct\": false," + "          \"foreign\": false," + "          \"ep\": false," + "          \"vietnam\": false," + "          \"jikp\": false,"
+                    + "          \"identifyingValue\": \"814\"" + "        }," + "        \"officeCity\": \"San Diego\"," + "        \"_links\": {" + "          \"self\": {"
+                    + "            \"href\": \"http://foobar.com/api/me-webservice/employees/123\"" + "          }," + "          \"employee\": {"
+                    + "            \"href\": \"http://foobar.com/api/you-webservice/employees/321\"" + "          }" + "        }" + "      }";
     private static final JsonPath JSON_PATH = new JsonPath(TEST_JSON);
 
     @Test

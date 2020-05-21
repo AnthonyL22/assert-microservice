@@ -16,7 +16,7 @@ public class AssertController extends Assertion {
     private Map<AssertionError, IAssert> verificationFailuresMap = Maps.newLinkedHashMap();
 
     /**
-     * Override the TestNG default Assert life cycle
+     * Override the TestNG default Assert life cycle.
      *
      * @param assertCommand assertion command to execute
      */
@@ -33,7 +33,7 @@ public class AssertController extends Assertion {
 
     /**
      * Altered path through Assertion lifecycle to override what we can do with
-     * TestNGs assertion
+     * TestNGs assertion.
      *
      * @param assertCommand assertion command to execute
      */
@@ -43,7 +43,7 @@ public class AssertController extends Assertion {
     }
 
     /**
-     * Successful assertion override for special handling of passed
+     * Successful assertion override for special handling of passed.
      * Assertions
      *
      * @param assertCommand current Assertion
@@ -54,7 +54,7 @@ public class AssertController extends Assertion {
     }
 
     /**
-     * Failures assertion override for special handling of failed
+     * Failures assertion override for special handling of failed.
      * Assertions
      *
      * @param assertCommand ignored object
@@ -67,7 +67,7 @@ public class AssertController extends Assertion {
 
     /**
      * Last piece of assertion chain to be called during @AfterClass to
-     * check for and pop assertion errors accordingly
+     * check for and pop assertion errors accordingly.
      */
     @AfterMethod(alwaysRun = true)
     public void assertionTearDown() {
@@ -79,7 +79,7 @@ public class AssertController extends Assertion {
     }
 
     /**
-     * Utility method to call force a call to pass assertions
+     * Utility method to call force a call to pass assertions.
      *
      * @param msg assertion message
      */
@@ -88,7 +88,7 @@ public class AssertController extends Assertion {
     }
 
     /**
-     * Output all assertion logging in a user-friendly fashion (WIP)
+     * Output all assertion logging in a user-friendly fashion (WIP).
      *
      * @param currentError current exception that was thrown in event of failure
      */

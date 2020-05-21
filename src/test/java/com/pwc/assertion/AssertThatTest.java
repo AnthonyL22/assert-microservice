@@ -63,27 +63,28 @@ public class AssertThatTest extends AssertBaseTest {
     @Test
     public void betweenOrEqualLoggingTest() {
         AssertService.assertBetweenOrEqual("The testing of BETWEEN OR EQUAL logging", 4, 4, 6);
-        Assert.assertEquals(AssertService.getOutputMessage(), "The testing of BETWEEN OR EQUAL logging is (a value equal to or greater than <4> and a value less than or equal to <6>)");
+        Assert.assertEquals(AssertService.getOutputMessage(), "The testing of BETWEEN OR EQUAL logging is (a value equal to or greater than <4> " + "and a value less than or equal to <6>)");
     }
 
     @Test
     public void collectionInOrderLoggingTest() {
         ArrayList actual = new ArrayList(Arrays.asList(1, 2, 3, 4, 5));
-        AssertService.assertCollectionInOrder("The testing of Collection IN ORDER logging", actual, new Object[]{1, 2, 3, 4, 5});
+        AssertService.assertCollectionInOrder("The testing of Collection IN ORDER logging", actual, new Object[] {1, 2, 3, 4, 5});
         Assert.assertEquals(AssertService.getOutputMessage(), "The testing of Collection IN ORDER logging is iterable containing [<1>, <2>, <3>, <4>, <5>]");
     }
 
     @Test
     public void collectionNotInOrderLoggingTest() {
         ArrayList actual = new ArrayList(Arrays.asList(1, 2, 3, 4, 5));
-        AssertService.assertCollectionNotInOrder("The testing of Collection NOT IN ORDER logging", actual, new Object[]{4, 3, 2, 1, 5});
-        Assert.assertEquals(AssertService.getOutputMessage(), "The testing of Collection NOT IN ORDER logging is not iterable containing [<4>, <3>, <2>, <1>, <5>] was <[1, 2, 3, 4, 5]>");
+        AssertService.assertCollectionNotInOrder("The testing of Collection NOT IN ORDER logging", actual, new Object[] {4, 3, 2, 1, 5});
+        Assert.assertEquals(AssertService.getOutputMessage(), "The testing of Collection NOT IN ORDER logging is not iterable containing [<4>, <3>, <2>, <1>, <5>] " + "was <[1, 2, 3, 4, 5]>");
     }
 
     @Test
     public void assertRegexLoggingTest() {
         AssertService.assertRegexTrue("The testing of REGEX logging", REGEXABLE_SNIPPET, "^.*?Build\\ Time/Date:.*?\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}Z.*?$");
-        Assert.assertEquals(AssertService.getOutputMessage(), "The testing of REGEX logging is matches regex='^.*?Build\\ Time/Date:.*?\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}Z.*?$' was 'foobar Build Time/Date: 2015-06-24T16:42:52Z foobar'");
+        Assert.assertEquals(AssertService.getOutputMessage(), "The testing of REGEX logging is matches regex='^.*?Build\\ Time/Date:.*?\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}Z.*?$' "
+                        + "was 'foobar Build Time/Date: 2015-06-24T16:42:52Z foobar'");
     }
 
 }

@@ -30,7 +30,7 @@ public class AssertEqualsTest extends AssertBaseTest {
 
     @Test
     public void passAssertEqualsObjectTest() {
-        String[] foobar = new String[]{"a", "b", "c"};
+        String[] foobar = new String[] {"a", "b", "c"};
         AssertService.assertEquals(foobar, foobar);
     }
 
@@ -76,8 +76,8 @@ public class AssertEqualsTest extends AssertBaseTest {
 
     @Test(expected = AssertionError.class)
     public void failAssertEqualsObjectTest() {
-        String[] foo = new String[]{"a", "b", "c"};
-        String[] bar = new String[]{"a", "b", "c", "d"};
+        String[] foo = new String[] {"a", "b", "c"};
+        String[] bar = new String[] {"a", "b", "c", "d"};
         AssertService.assertEquals(foo, bar);
     }
 

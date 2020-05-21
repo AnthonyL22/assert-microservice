@@ -17,9 +17,15 @@ import static com.pwc.logging.service.LoggerService.LOG;
 import static org.hamcrest.CoreMatchers.both;
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.not;
-import static org.hamcrest.Matchers.*;
+import static org.hamcrest.Matchers.contains;
 import static org.hamcrest.Matchers.containsString;
+import static org.hamcrest.Matchers.equalToIgnoringCase;
+import static org.hamcrest.Matchers.greaterThan;
+import static org.hamcrest.Matchers.greaterThanOrEqualTo;
+import static org.hamcrest.Matchers.lessThan;
+import static org.hamcrest.Matchers.lessThanOrEqualTo;
 import static org.hamcrest.Matchers.nullValue;
+import static org.hamcrest.Matchers.stringContainsInOrder;
 
 @Component
 public class AssertService {
@@ -32,22 +38,24 @@ public class AssertService {
     }
 
     /**
-     * Constructor to enable or disable assertions globally
+     * Constructor to enable or disable assertions globally.
      *
      * @param enableHardAssertions enable/disable setting
      */
     public AssertService(final boolean enableHardAssertions) {
+
         AssertService.enableHardAssertions = enableHardAssertions;
     }
 
     /**
-     * Base method for all assertions
+     * Base method for all assertions.
      *
      * @param message       message description
      * @param actual        actual value to assert upon
      * @param actualMatcher Matcher to use for the assertion
      */
     public static void assertThat(String message, Object actual, Matcher actualMatcher) {
+
         StringDescription stringDescription = new StringDescription();
         stringDescription.appendText(message + " ");
         actualMatcher.describeTo(stringDescription);
