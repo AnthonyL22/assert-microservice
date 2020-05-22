@@ -268,6 +268,14 @@ public class AssertService {
         assertThat(message, actualSource, CoreMatchers.is(not(new CustomMatchers.JsonMatcher(expectedField, null))));
     }
 
+    public static void assertSimilarity(final String message, final String actualSource, final String target, final double minimalSimilarityRating) {
+        assertThat(message, actualSource, CoreMatchers.is(new CustomMatchers.StringSimilarMatcher(actualSource, target, minimalSimilarityRating)));
+    }
+
+    public static void assertSimilarity(final String actualSource, final String target, final double minimalSimilarityRating) {
+        assertSimilarity("", actualSource, target, minimalSimilarityRating);
+    }
+
     public static void assertPass(String message, final Object... messageArgs) {
         message = LoggerHelper.formatMessage(message, messageArgs);
         LOG(message);

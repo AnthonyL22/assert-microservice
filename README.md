@@ -132,3 +132,4 @@ tests more readable!
 * assertJsonFieldNotEquals()
 * assertJsonContainsField()
 * assertJsonNotContainsField()
+* assertSimilarity()

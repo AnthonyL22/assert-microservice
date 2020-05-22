@@ -12,12 +12,13 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.regex.Pattern;
+import java.util.stream.IntStream;
 
 public class CustomMatchers {
 
     /**
      * Assert if an object is contained within a Collection.
-     *
+     * <p>
      * Note: toString() is called on each item in the collection to perform the RegEx
      */
     public static class CollectionContainsMatcher extends BaseMatcher {
@@ -59,6 +60,98 @@ public class CustomMatchers {
             description.appendText(String.format("expected='%s'", expected));
             description.appendText(LoggerHelper.formatMessage("expected='%s'", expected));
         }
+    }
+
+    /**
+     * String Similarity matcher to find how similar two Strings are.
+     */
+    public static class StringSimilarMatcher extends BaseMatcher {
+
+        private final String sourceString;
+        private final String targetString;
+        private final double acceptableAmountOfSimilarity;
+
+        public StringSimilarMatcher(String source, String target, double acceptableSimilarity) {
+            this.sourceString = source;
+            this.targetString = target;
+            this.acceptableAmountOfSimilarity = acceptableSimilarity;
+        }
+
+        @Override
+        public boolean matches(Object o) {
+            double similarityRating = calculateSimilarity(sourceString, targetString);
+            return StringUtils.equalsIgnoreCase(sourceString, targetString) || similarityRating >= acceptableAmountOfSimilarity;
+        }
+
+        @Override
+        public void describeTo(Description description) {
+            description.appendText(String.format("'%s' %s%s similar", targetString, acceptableAmountOfSimilarity, "%%"));
+        }
+
+        /**
+         * Calculates the similarity (a number within 0 and 1) between two strings. 1.0 being an exact match and < 1.0 is
+         * potentially less similar.
+         *
+         * @param baseString   source String to base similarity off of
+         * @param targetString String to compare to
+         * @return similarity rating
+         */
+        private static double calculateSimilarity(String baseString, String targetString) {
+
+            String longer = baseString;
+            String shorter = targetString;
+            if (baseString.length() < targetString.length()) {
+                longer = targetString;
+                shorter = baseString;
+            }
+            int longerLength = longer.length();
+            if (longerLength == 0) {
+                return 1.0;
+            }
+            return (longerLength - editDistance(longer, shorter)) / (double) longerLength;
+        }
+
+        /**
+         * Similarity distance based on Levenshtein Distance algorithm.
+         * http://rosettacode.org/wiki/Levenshtein_distance#Java
+         *
+         * @param baseString   source String to base similarity off of
+         * @param targetString String to compare to
+         * @return distance
+         */
+        private static int editDistance(String baseString, String targetString) {
+
+            baseString = baseString.toLowerCase();
+            targetString = targetString.toLowerCase();
+            String finalTargetString = targetString;
+            String finalBaseString = baseString;
+            int[] costs = new int[targetString.length() + 1];
+
+            IntStream.range(0, baseString.length()).forEach(i -> {
+                int lastValue = i;
+                for (int j = 0; j <= finalTargetString.length(); j++) {
+                    if (i == 0) {
+                        costs[j] = j;
+                    } else {
+                        if (j > 0) {
+                            int newValue = costs[j - 1];
+                            if (finalBaseString.charAt(i - 1) != finalTargetString.charAt(j - 1)) {
+                                newValue = Math.min(Math.min(newValue, lastValue), costs[j]) + 1;
+                            }
+                            costs[j - 1] = lastValue;
+                            lastValue = newValue;
+                        }
+                    }
+                }
+                if (i > 0) {
+                    costs[finalTargetString.length()] = lastValue;
+                }
+
+            });
+
+            return costs[targetString.length()];
+        }
+
     }
 
     /**
@@ -176,6 +269,5 @@ public class CustomMatchers {
             return false;
         }
     }
-
 
 }
